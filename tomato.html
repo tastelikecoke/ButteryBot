@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html {
+        overflow-y: scroll;
+      }
+      body {
+        margin: 0;
+      }
+      .textbox{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="chats">
+        <div v-for="chat in chats">
+          {{ chat.text }}
+          <img v-bind:src="chat.image" v-if="chat.image" />
+        </div>
+      </div>
+      <div class="panels">
+        <div v-if="timer.end > now">
+          Timer: {{ (timer.end - now) | humanize }} left
+        </div>
+      </div>
+      <input class="textbox" v-model="textbox" v-on:keyup.enter="addChat">
+    </div>
+    <script src="jquery-3.1.0.js"></script>
+    <script src="vue.js"></script>
+    <script src="bot.js"></script>
+  </body>
+</html>

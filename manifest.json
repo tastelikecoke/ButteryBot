@@ -1,0 +1,13 @@
+{
+  "name": "ButterBot",
+  "description": "Chat with butter bot.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "permissions": ["storage", "notifications", "webview", "<all_urls>"],
+  "icons": { "16": "calculator-16.png", "128": "calculator-128.png" }
+}
