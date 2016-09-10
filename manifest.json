@@ -1,6 +1,6 @@
 {
-  "name": "ButterBot",
-  "description": "Chat with butter bot.",
+  "name": "ButteryBot",
+  "description": "Chat with a buttery bot.",
   "version": "0.1",
   "manifest_version": 2,
   "app": {
