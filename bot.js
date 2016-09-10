@@ -10,27 +10,6 @@ function addImage(url, callback){
   xhr.send();
 }
 
-/*
-var chatbox = [];
-
-
-
-function Entity(name, updater){
-  this.name = name;
-  this.update = updater;
-}
-var entities = [];
-
-function addChat(string){
-  var newdiv = $("<div></div>");
-  newdiv.addClass("entry");
-  newdiv.html(string);
-  $(".container").append(newdiv);
-  chatbox.push(newdiv);
-  return newdiv;
-};
-*/
-
 var app = new Vue({
   el: '#app',
   data: {
@@ -108,71 +87,3 @@ var bot = {
   },
 }
 bot.init();
-/*
-function update(){
-  entities.forEach(function(e,i,a){
-    e.update();
-  });
-}
-window.setInterval(function(){
-  update();
-}, 200);
-
-var panels = [];
-
-function addPanel(callback){
-  var newdiv = $("<div></div>");
-  newdiv.addClass("panel");
-  $(".panels").append(newdiv);
-  callback(newdiv);
-}
-
-function triggerBot(string){
-  if(string == 'counter'){
-    addChat("Bot: Aye aye! Counting now.");
-    addPanel(function(startDate){
-      return function(panel){
-        var newEntity = new Entity('timer', function(){
-          var secondsPast = (Date.now() - startDate) / 1000.0;
-          panel.html(secondsPast.toString()+" seconds");
-        });
-        entities.push(newEntity);
-      }
-    }(Date.now()));
-  }
-  if(string == 'hi' || string == 'Hi'){
-    addChat("Bot: Heya!");
-  }
-  if(string == 'cat'){
-    addImage('http://thecatapi.com/api/images/get?format=src&type=gif', addChat("Bot:"));
-  }
-
-  var strings = string.split(' ');
-  if(strings[0] == 'timer'){
-    var minutes = parseInt(strings[1]);
-    addChat("Bot: Aye aye! Timing now.");
-    addPanel(function(endDate){
-      return function(panel){
-        var newEntity = new Entity('timer', function(){
-          var secondsPast = (endDate - Date.now()) / 1000.0;
-          if(secondsPast < 0){
-
-          }
-          panel.html(secondsPast.toString()+" seconds left");
-        });
-        entities.push(newEntity);
-      }
-    }(Date.now() + minutes * 60 * 1000));
-  }
-}
-
-$(".textbox").keyup(function(event){
-    if(event.keyCode == 13){
-      addChat("You: " + $(this).val());
-      triggerBot($(this).val());
-      $(this).val("");
-    }
-});
-window.scrollTo(0,document.body.scrollHeight);
-addChat("Bot: Hi! I am a buttery butler.")
-*/
